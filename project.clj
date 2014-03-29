@@ -11,7 +11,6 @@
                  [ring/ring-core "1.2.2"]
                  [ring/ring-devel "1.1.8"]
                  [ring-cors "0.1.0"]
-                 [javax.servlet/servlet-api "2.5"]
                  [http-kit "2.1.18"]
                  [hiccup "1.0.5"]
                  [org.clojure/data.json "0.2.4"]]
@@ -33,6 +32,7 @@
 
   :omit-source true
   :profiles { :dev {:dependencies [[org.clojure/clojurescript "0.0-2173"]
-                                   [enfocus "2.0.2"]] }}
+                                   [enfocus "2.0.2"]
+                                   [javax.servlet/servlet-api "2.5"]]}}
   :aot :all
   :main linkopen.core)
