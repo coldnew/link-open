@@ -38,12 +38,7 @@
                             (cond
                              (file? url) (open-file url)
                              link? (browser/set-info-url url))
-                            (reset! text url)
-
-                            ;; An optional param can pass to send!: close-after-send?
-                            ;; When unspecified, `close-after-send?` defaults to true for HTTP channels
-                            ;; and false for WebSocket.  (send! channel data close-after-send?)
-                            (send! channel data))) ; data is sent
+                            (reset! text url)))
                 )))
 
 (defn render-index []
