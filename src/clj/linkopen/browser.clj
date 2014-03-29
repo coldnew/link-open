@@ -35,16 +35,15 @@
   (jfx/run-later (.requestFocus @ctrl-page)))
 
 (defn set-info-url [url]
-  (set-url @info-page url)
   (set-state-page STATE_LOADING)
   (jfx/run-later (.setVisible @info-page false))
-  (jfx/run-later (.setVisible @state-page true)))
+  (jfx/run-later (.setVisible @state-page true))
+  (set-url @info-page url))
 
 (defn set-state-url [url]
-  (println "URL is " url)
-  (set-url @state-page url)
   (jfx/run-later (.setVisible @info-page false))
-  (jfx/run-later (.setVisible @state-page true)))
+  (jfx/run-later (.setVisible @state-page true))
+  (set-url @state-page url))
 
 (defn set-state-page [x]
   (set-state-url
@@ -108,6 +107,7 @@
       (.setPrefSize 800 600))
 
     (.setVisible web-info true)
+    (.requestFocus web-control)
 
     (doto stage
       (.setScene (Scene. root))
