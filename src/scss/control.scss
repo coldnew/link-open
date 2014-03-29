@@ -1,0 +1,31 @@
+@import "../../lib/bourbon/bourbon";
+
+
+body {
+    background: #333333  top left repeat;
+    margin: 0;
+    padding: 0;
+    font: 16px normal Verdana, Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+    color: #ffffff
+}
+
+table {
+    word-break:break-all;
+}
+
+input {
+    border-radius: 8px;
+    padding: 5px;
+
+    @include box-shadow(inset 2px 2px 3px rgba(0, 0, 0, 0.2));
+}
+
+#version {
+    position: fixed;
+    display: block;
+    bottom: 1px;
+    left: 4em;
+    float: left;
+}
