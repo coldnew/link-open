@@ -88,9 +88,9 @@
                     (changed [^ObservableValue ov
                               ^Worker$State old-state
                               ^Worker$State new-state]
-                      (println (str "Current state:" (.name new-state)))
                       (when (= new-state Worker$State/SUCCEEDED)
                         (println (str "URL '" url "' load completed!"))
+                        (time (Thread/sleep 100))
                         (.setVisible web-info true))
                       (when (= new-state Worker$State/FAILED)
                         (println (str "URL '" url "' load failed!"))
