@@ -89,7 +89,7 @@
                               ^Worker$State new-state]
                       (when (= new-state Worker$State/SUCCEEDED)
                         (println (str "URL '" url "' load completed!"))
-                        (time (Thread/sleep 100))
+                        (time (Thread/sleep 200))
                         (.setVisible web-info true))
                       (when (= new-state Worker$State/FAILED)
                         (println (str "URL '" url "' load failed!"))
