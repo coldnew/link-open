@@ -1,6 +1,6 @@
 #+OPTIONS: toc:nil
 
-* Link Open
+* Link Open [[https://travis-ci.org/coldnew/link-open.svg?branch=master][Build Status]]
 
 This is a simple javafx application written in Clojure/Clojurescript,
 which will open file or make javafx browser switch to http link
