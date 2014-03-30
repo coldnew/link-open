@@ -3,6 +3,8 @@ language:
 lein: lein2
 jdk:
   - oraclejdk8
+before_install:
+  - "export DISPLAY=:99.0"
 script:
   - lein2 clean
   - lein2 cljsbuild clean
