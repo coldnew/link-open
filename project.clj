@@ -33,7 +33,8 @@
   ;; scss
   :scss {:src "src/scss"
          :output-directory "resources/public/css"
-         :output-extension "css"}
+         :output-extension "css"
+         :style :compressed}
 
   :omit-source true
   :profiles { :dev {:dependencies [[org.clojure/clojurescript "0.0-2173"]
