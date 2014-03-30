@@ -29,10 +29,13 @@
 
 (declare set-state-page)
 
+(defn set-focus-to-ctrl-page []
+  (jfx/run-later (.requestFocus @ctrl-page)))
+
 (defn set-url [w url]
   (jfx/run-later (.load (.getEngine w) url))
   ;; Make focus back to control page
-  (jfx/run-later (.requestFocus @ctrl-page)))
+  (set-focus-to-ctrl-page))
 
 (defn set-info-url [url]
   (set-state-page STATE_LOADING)
@@ -89,7 +92,8 @@
                               ^Worker$State new-state]
                       (when (= new-state Worker$State/SUCCEEDED)
                         (println (str "URL '" url "' load completed!"))
-                        (.setVisible web-info true))
+                        (.setVisible web-info true)
+                        (set-focus-to-ctrl-page))
                       (when (= new-state Worker$State/FAILED)
                         (println (str "URL '" url "' load failed!"))
                         (set-state-page STATE_404)))))
