@@ -9,4 +9,4 @@ script:
   - lein2 cljsbuild once
   - lein2 scss clean
   - lein2 scss once
-  - lein2 all test
+  - lein2 compile
