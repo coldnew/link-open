@@ -15,9 +15,13 @@
                  [hiccup "1.0.5"]
                  [org.clojure/data.json "0.2.4"]]
 
+  :aliases {"auto" ["pdo" "cljsbuild" "auto," "scss" "auto"]
+            "once" ["pdo" "cljsbuild" "once," "scss" "once"]}
+
   :plugins [[lein-autoreload "0.1.0"]
             [lein-cljsbuild "1.0.2"]
-            [lein-haml-sass "0.2.7-SNAPSHOT"]]
+            [lein-haml-sass "0.2.7-SNAPSHOT"]
+            [lein-pdo "0.1.1"]]
 
   ;; cljs
   :cljsbuild {:builds
