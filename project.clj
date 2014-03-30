@@ -16,6 +16,7 @@
                  [org.clojure/data.json "0.2.4"]]
 
   :plugins [[lein-autoreload "0.1.0"]
+            [lein-cljsbuild "1.0.2"]
             [lein-haml-sass "0.2.7-SNAPSHOT"]]
 
   ;; cljs
