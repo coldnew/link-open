@@ -2,7 +2,7 @@
 
 This is a simple javafx application written in Clojure/Clojurescript,
 which will open file or make javafx browser switch to http link
-accodring user input.
+accodring to user input.
 
 ## Usage
 
