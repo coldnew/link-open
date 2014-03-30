@@ -34,7 +34,7 @@
                           (let [json-data (json/read-str data :key-fn keyword)
                                 url (:url json-data)
                                 link? (:link? json-data)
-                                file? (sys/file> url)]
+                                file? (sys/file? url)]
                             (println "Receive message: " (str data))
                             (cond
                              file? (sys/open-file url)
