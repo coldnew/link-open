@@ -1,0 +1,33 @@
+#+OPTIONS: toc:nil
+
+* Link Open
+
+This is a simple javafx application written in Clojure/Clojurescript,
+which will open file or make javafx browser switch to http link
+accodring user input.
+
+** Usage
+
+To compile this application, you need to use following command
+
+#+BEGIN_SRC sh
+  lein deps
+  lein scss once
+  lein cljsbuild once
+  lein uberjar
+  lein run
+#+END_SRC
+
+** Screenshots
+:PROPERTIES:
+:ATTACH_DIR: resources/picts
+:END:
+
+[[file:resources/picts/screenshot.png]]
+
+** License
+
+Copyright © 2014 coldnew
+
+Distributed under the Eclipse Public License either version 1.0 or (at
+your option) any later version.
