@@ -1,7 +1,6 @@
 (ns linkopen.server
   (:gen-class)
-  (:use linkopen.system
-        org.httpkit.server
+  (:use org.httpkit.server
         [clojure.tools.logging :only [info]]
         [compojure.core :only [defroutes GET POST]]
         [compojure.route :only [files resources not-found]]
@@ -14,7 +13,8 @@
   (:require [clojure.data.json :as json]
             [clojure.java.io :as io]
             [ring.util.response :as response]
-            [linkopen.browser :as browser]))
+            [linkopen.browser :as browser]
+            [linkopen.system :as sys]))
 
 (defmacro get-version []
   (System/getProperty "linkopen.version"))
@@ -33,10 +33,11 @@
     (on-receive channel (fn [data]
                           (let [json-data (json/read-str data :key-fn keyword)
                                 url (:url json-data)
-                                link? (:link? json-data)]
+                                link? (:link? json-data)
+                                file? (sys/file> url)]
                             (println "Receive message: " (str data))
                             (cond
-                             (file? url) (open-file url)
+                             file? (sys/open-file url)
                              link? (browser/set-info-url url))
                             (reset! text url)))
                 )))
