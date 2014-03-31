@@ -9,11 +9,15 @@
   [url]
   (.exists (io/as-file url)))
 
+;; TODO: Not a good way to determine OS platform
 (defn open-file
   "Open file with os default application."
   [url]
+  (println "go")
   (let [os (System/getProperty "os.name")]
     (cond
      (= os "Linux") (sh "xdg-open" url)
      (= os "Mac OS X") (sh "open" url)
-     (= os "Windows") (sh "cmd.exe /c start" url))))
+     ;; for the f**k Windows platform
+     :else
+     (sh "cmd.exe" "/c" "start" url))))
